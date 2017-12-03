@@ -267,13 +267,13 @@ void randomizeBin(char binNum[]){
 	//generate 
 	if(strlen(binNum) < 16){
 		for(cnt=strlen(binNum)-1; cnt<17; cnt++){
-			binNum[cnt] = (rand() % 10) + '0';
+			binNum[cnt] = (rand() % 9) + '0';
 		}
 		binNum[strlen(binNum)-1] = '\0';
 	}else{
 		for(cnt=0; cnt<strlen(binNum); cnt++){
 			if(tolower(binNum[cnt]) == 'x'){
-				binNum[cnt] = (rand() % 10) + '0';
+				binNum[cnt] = (rand() % 9) + '0';
 			}
 		}
 	}
