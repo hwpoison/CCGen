@@ -266,7 +266,7 @@ void randomizeBin(char binNum[]){
 	int cnt;
 	//generate 
 	if(strlen(binNum) < 16){
-		for(cnt=strlen(binNum)-1; cnt<17; cnt++){
+		for(cnt=strlen(binNum)-1; cnt<=17; cnt++){
 			binNum[cnt] = (rand() % 9) + '0';
 		}
 		binNum[strlen(binNum)-1] = '\0';
