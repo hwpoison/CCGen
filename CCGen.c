@@ -6,8 +6,9 @@
 #include <string.h>
 #include <time.h>
 #include <ctype.h>
-
+#include "resource.h"
 #define FILE_DB_BINS "db_bins.txt"
+#define LONG_CARD_NUM 16
 int   checkLuhn(char binNum[]);       	    //Luhn comprobation
 void  randomizeBin(char binNum[]);				//Fill Bin X
 void  genCC(char binNum[], int cantidad);	//Gen random BIN
@@ -187,7 +188,7 @@ puts("    ---- By:sRBill1996 ----\n");
 
 void genCC(char binNum[], int amountToGen){
 	printf("Generating..\n");
-	if(strlen(binNum) > 16){
+	if(strlen(binNum) > LONG_CARD_NUM){
 		printf("Max of 16 digits exceded.\n");
 		return;
 	}
@@ -265,11 +266,16 @@ int genCCV(){
 void randomizeBin(char binNum[]){
 	int cnt;
 	//generate 
-	if(strlen(binNum) < 16){
-		for(cnt=strlen(binNum)-1; cnt<=17; cnt++){
-			binNum[cnt] = (rand() % 9) + '0';
+	if(strlen(binNum) < LONG_CARD_NUM){
+		for(cnt = strlen(binNum);cnt < LONG_CARD_NUM+1;cnt++){
+			binNum[cnt] = 'x';
 		}
-		binNum[strlen(binNum)-1] = '\0';
+		binNum[LONG_CARD_NUM+1] = '\0';
+		for(cnt=0; cnt<=LONG_CARD_NUM; cnt++){
+			if(!isdigit(binNum[cnt])){
+				binNum[cnt] = (rand() % 9) + '0';
+			}
+		}
 	}else{
 		for(cnt=0; cnt<strlen(binNum); cnt++){
 			if(tolower(binNum[cnt]) == 'x'){
