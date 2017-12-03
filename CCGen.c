@@ -6,7 +6,6 @@
 #include <string.h>
 #include <time.h>
 #include <ctype.h>
-#include "resource.h"
 #define FILE_DB_BINS "db_bins.txt"
 #define LONG_CARD_NUM 16
 int   checkLuhn(char binNum[]);       	    //Luhn comprobation
@@ -182,7 +181,7 @@ puts("888       888       888                ");
 puts("888       888       888  88888         ");
 puts("888    888888    888888    888         ");
 puts("Y88b  d88PY88b  d88PY88b  d88P 		");
-printf(" \"Y8888P\"  \"%s\"  \"Y8888P\" \n",lastBin);
+printf(" \"Y8888P\"  \"%s\"  \"3/12/17\" \n",lastBin);
 puts("    ---- By:sRBill1996 ----\n");
 }
 
