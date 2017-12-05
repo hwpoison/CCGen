@@ -6,8 +6,10 @@
 #include <string.h>
 #include <time.h>
 #include <ctype.h>
+
 #define FILE_DB_BINS "db_bins.txt"
 #define LONG_CARD_NUM 16
+
 int   checkLuhn(char binNum[]);       	    //Luhn comprobation
 void  randomizeBin(char binNum[]);				//Fill Bin X
 void  genCC(char binNum[], int cantidad);	//Gen random BIN
