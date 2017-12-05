@@ -286,9 +286,16 @@ void randomizeBin(char binNum[]){
 	}
 }
 
+int sumNumDigits(int num){
+	if(num < 10){
+		return num;
+	}else{
+		return num % 10 + sumNumDigits(num/10);
+	}
+}
+
 int checkLuhn(char binNum[]){
 	int i,num,suma = 0;
-	char temp[19];
 	for(i=strlen(binNum)-1; i>=0; i--)
 	{
 		if(i%2!=0){
@@ -296,8 +303,7 @@ int checkLuhn(char binNum[]){
 		}else{
 			num = ((int)binNum[i] - '0') * 2;
 			if(num > 9){
-				sprintf(temp, "%d", num);
-				suma+= (int)temp[0]-'0' + (int)temp[1]-'0';
+				suma+= sumNumDigits(num);
 			}else{
 				suma+=num;
 			}
