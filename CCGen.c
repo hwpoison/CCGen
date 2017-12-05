@@ -1,11 +1,12 @@
 //Coded by sRBill1996
 //Sites:netixzen.blogspot.com.ar
 //      github.com/srbill1996 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
-#include <time.h>
 #include <ctype.h>
+#include <time.h>
+
 
 #define FILE_DB_BINS "db_bins.txt"
 #define LONG_CARD_NUM 16
@@ -206,8 +207,8 @@ void genCC(char binNum[], int amountToGen){
 			printf("%s | %d | %d/%s\n", 
 									tmpBIN, 
 									genCCV(), 
-									(actualYear-2000)+rand()%6, 
-									genMonth()
+									genMonth(),
+									(actualYear-2000)+rand()%6
 			);
 			count++;
 			strncpy(lastBin, tmpBIN, 6);
