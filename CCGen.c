@@ -4,9 +4,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 #include <time.h>
-
+#include <ctype.h>
 
 #define FILE_DB_BINS "db_bins.txt"
 #define LONG_CARD_NUM 16
@@ -204,7 +203,7 @@ void genCC(char binNum[], int amountToGen){
 		strcpy(tmpBIN, binNum);
 		randomizeBin(tmpBIN);
 		if(checkLuhn(tmpBIN) == 1){
-			printf("%s | %d | %d/%s\n", 
+			printf("%s | %d | %s/%d\n", 
 									tmpBIN, 
 									genCCV(), 
 									genMonth(),
