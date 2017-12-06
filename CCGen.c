@@ -141,17 +141,15 @@ int getInputStr(char binNum[], char *nameInput, int limit){
 		scanf("%s", binNum);
 		if(strlen(binNum) < limit)
 			printf("Error in long limit of digits.\n");
-		if(binNum[0] == 'b'){//back to the menu
+		if(binNum[0] == 'b')//back to the menu
 			return -1;
-		}
 	}
 	return 1;
 }
 
 void lowerArray(char array[]){
-	int i;for(i=0;i < strlen(array);i++){
+	int i;for(i=0;i < strlen(array);i++)
 		array[i] = tolower(array[i]);
-	}
 }
 
 char *locationOfBin(char bin[], int buffersize){
@@ -258,9 +256,8 @@ char *genMonth(){
 
 int genCCV(){
 	int ccv = 0;
-	while(ccv < 101){
+	while(ccv < 101)
 		ccv  = rand() % 998;
-	}
 	return ccv;
 }
 
@@ -287,11 +284,10 @@ void randomizeBin(char binNum[]){
 }
 
 int sumNumDigits(int num){
-	if(num < 10){
+	if(num < 10)
 		return num;
-	}else{
+	else
 		return num % 10 + sumNumDigits(num/10);
-	}
 }
 
 int checkLuhn(char binNum[]){
@@ -302,11 +298,10 @@ int checkLuhn(char binNum[]){
 			suma+= (int)binNum[i]-'0';
 		}else{
 			num = ((int)binNum[i] - '0') * 2;
-			if(num > 9){
+			if(num > 9)
 				suma+= sumNumDigits(num);
-			}else{
+			else
 				suma+=num;
-			}
 		}
 	}
 	return (suma%10 == 0)? 1:-1;
