@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 					genCC(binNum, amountGen);
 				break;
 			case '2':
-				while(getInputStr(binNum, "BIN:", 16) != -1){
+				while(getInputStr(binNum, "BIN:", LONG_CARD_NUM) != -1){
 					if(checkLuhn(binNum) == 1)
 						printf("Is a Valid BIN.\n");
 					else
