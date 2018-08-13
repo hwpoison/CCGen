@@ -26,7 +26,7 @@ char lastBin[100] = "000000";
 int main(int argc, char *argv[])
 {	
 	srand(time(NULL));
-	char binNum[20];
+	char binNum[15];
 	long int amountGen = 10;
 	while(1){
 		system("cls");
@@ -188,7 +188,7 @@ puts("    ---- By:sRBill1996 ----\n");
 void genCC(char binNum[], int amountToGen){
 	printf("Generating..\n");
 	if(strlen(binNum) > LONG_CARD_NUM){
-		printf("Max of 16 digits exceded.\n");
+		printf("Max of %d digits exceded.\n", LONG_CARD_NUM);
 		return;
 	}
 	char tmpBIN[19];
@@ -282,27 +282,25 @@ void randomizeBin(char binNum[]){
 		}
 	}
 }
+int checkLuhn(char *number)
+{
+    int i, sum, ch, num, twoup, len;
 
-int sumNumDigits(int num){
-	if(num < 10)
-		return num;
-	else
-		return num % 10 + sumNumDigits(num/10);
+    len = strlen(number);
+    sum = 0;
+    twoup = 0;
+    for (i = len - 1; i >= 0; --i) {
+        ch = number[i];
+        num = (ch >= '0' && ch <= '9') ? ch - '0' : 0;
+        if (twoup) {
+            num += num;
+            if (num > 9) num = (num % 10) + 1;
+        }
+        sum += num;
+        twoup = ++twoup & 1;
+    }
+    sum = 10 - (sum % 10);
+    if (sum == 10) sum = 0;
+    return (sum == 0) ? 1 : 0;
 }
 
-int checkLuhn(char binNum[]){
-	int i,num,suma = 0;
-	for(i=strlen(binNum)-1; i>=0; i--)
-	{
-		if(i%2!=0){
-			suma+= (int)binNum[i]-'0';
-		}else{
-			num = ((int)binNum[i] - '0') * 2;
-			if(num > 9)
-				suma+= sumNumDigits(num);
-			else
-				suma+=num;
-		}
-	}
-	return (suma%10 == 0)? 1:-1;
-}
