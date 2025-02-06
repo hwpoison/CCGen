@@ -1,6 +1,6 @@
-//Coded by sRBill1996
+//Coded by ELRATA
 //Sites:netixzen.blogspot.com.ar
-//      github.com/srbill1996 
+//      github.com/ELRATA
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -31,15 +31,15 @@ int main(int argc, char *argv[])
 	while(1){
 		system("cls");
 		printLogo();
-		printf("Insert opcion, input 'b' for back to the menu.\n");
-		printf("1)Generate from BIN base.\n");
-		printf("2)Check BIN validation.\n");
-		printf("3)Set amount of Bins to generate.\n");
-		printf("4)Search BIN.\n");
-		printf("5)Search a BIN by keywords.\n");
-		printf("6)Drop Random BIN\n");
-		printf("7)Generate BIN from last in memory.\n");
-		printf("8)Exit");
+		printf("Inserte opción, ingrese 'b' para volver al menú.\n");
+		printf("1)Generar desde la base BIN.\n");
+		printf("2)Verificar validación BIN.\n");
+		printf("3)Establecer la cantidad de contenedores a generar.\n");
+		printf("4)Buscar BIN.\n");
+		printf("5)Buscar un BIN por palabras clave.\n");
+		printf("6)Soltar BIN aleatorio\n");
+		printf("7)Generar BIN desde el último en la memoria.\n");
+		printf("8)Salir");
 		printf("\nOption>:");
 		int opcion;
 		switch((opcion = getchar())){
@@ -182,7 +182,7 @@ puts("888       888       888  88888         ");
 puts("888    888888    888888    888         ");
 puts("Y88b  d88PY88b  d88PY88b  d88P 		");
 printf(" \"Y8888P\"  \"%s\"  \"3/12/17\" \n",lastBin);
-puts("    ---- By:sRBill1996 ----\n");
+puts("    ---- By:ELRATA ----\n");
 }
 
 void genCC(char binNum[], int amountToGen){
